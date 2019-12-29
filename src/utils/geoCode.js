@@ -29,7 +29,8 @@ const forecast=(latitude,longitude,callback)=>{
            if(response.body.daily.data[0].summary){
                placeValue=response.body.daily.data[0].summary
            }
-            callback(undefined,placeValue + ' It is currently ' +response.body.currently.temperature+ ' degress out. There is a ' + response.body.currently.precipProbability+ '% chances of rain' )
+           console.log(response.body.daily.data[0])
+            callback(undefined,placeValue + ' It is currently ' +response.body.currently.temperature+ ' degress out. High temperature reported to be '+response.body.daily.data[0].temperatureHigh+' and low temperature will be '+response.body.daily.data[0].temperatureLow+'. There is a ' + response.body.currently.precipProbability+ '% chances of rain' )
         }
     })
 }
